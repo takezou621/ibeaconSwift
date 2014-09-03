@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
 
-
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        // Override point for customization after application launch.
+
         return true
     }
 
@@ -40,7 +39,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication!) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    /*
+    
+    // CLLocation Delegate
+    func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion inRegion: CLRegion!) {
+        println("startMonitoring")
+        manager.requestStateForRegion(inRegion)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion inRegion: CLRegion!) {
+        print("didDetermineState")
+        if state == .Inside{
+            manager.startRangingBeaconsInRegion(region)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("didFailWithError \(error)")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        println("didEnterRegion")
+        locationManager.startRangingBeaconsInRegion(region as CLBeaconRegion)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+        locationManager.stopRangingBeaconsInRegion(region as CLBeaconRegion)
+    }
+    
+    func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {
+        println("monitoringDidFailForRegion \(error)")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+        println("didRangeBeacons")
+        if beacons.count == 0 {return};
+        
+        var beacon = beacons[0] as CLBeacon;
+        
+        if beacon.proximity == CLProximity.Unknown {
+            NSLog("Unknown")
+            
+        }else if beacon.proximity == CLProximity.Immediate {
+            NSLog("Immediate")
+            
+        }else if beacon.proximity == CLProximity.Near {
+            NSLog("Near")
+            
+        }else if beacon.proximity == CLProximity.Far {
+            NSLog("Far")
+            
+        }
+        
+    }
+*/
+    
 }
-

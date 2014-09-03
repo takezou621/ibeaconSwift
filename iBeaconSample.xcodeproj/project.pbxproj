@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D224B1B319B42AD500A9ED2D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224B1B219B42AD500A9ED2D /* CoreLocation.framework */; };
+		D224B1B519B42AE000A9ED2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D224B1B419B42AE000A9ED2D /* Foundation.framework */; };
 		D2F4EEB019B4086500D9930D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4EEAF19B4086500D9930D /* AppDelegate.swift */; };
 		D2F4EEB219B4086500D9930D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4EEB119B4086500D9930D /* ViewController.swift */; };
 		D2F4EEB519B4086500D9930D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F4EEB319B4086500D9930D /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D224B1B219B42AD500A9ED2D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D224B1B419B42AE000A9ED2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2F4EEAA19B4086500D9930D /* iBeaconSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F4EEAE19B4086500D9930D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F4EEAF19B4086500D9930D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D224B1B519B42AE000A9ED2D /* Foundation.framework in Frameworks */,
+				D224B1B319B42AD500A9ED2D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 		D2F4EEA119B4086500D9930D = {
 			isa = PBXGroup;
 			children = (
+				D224B1B419B42AE000A9ED2D /* Foundation.framework */,
+				D224B1B219B42AD500A9ED2D /* CoreLocation.framework */,
 				D2F4EEAC19B4086500D9930D /* iBeaconSample */,
 				D2F4EEBF19B4086600D9930D /* iBeaconSampleTests */,
 				D2F4EEAB19B4086500D9930D /* Products */,
@@ -158,6 +166,7 @@
 				TargetAttributes = {
 					D2F4EEA919B4086500D9930D = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4B873Q67MK;
 					};
 					D2F4EEBB19B4086600D9930D = {
 						CreatedOnToolsVersion = 6.0;
@@ -325,9 +334,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Takeshi Kawai (MW87WM6F75)";
 				INFOPLIST_FILE = iBeaconSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -336,9 +348,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Takeshi Kawai (MW87WM6F75)";
 				INFOPLIST_FILE = iBeaconSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -395,6 +410,7 @@
 				D2F4EEC819B4086600D9930D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2F4EEC919B4086600D9930D /* Build configuration list for PBXNativeTarget "iBeaconSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +419,7 @@
 				D2F4EECB19B4086600D9930D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
