@@ -21,11 +21,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             region.notifyOnEntry = true
             region.notifyEntryStateOnDisplay = false
             
-            let uuid:NSUUID = NSUUID(UUIDString: "xxxxxx-02B5-1801-86F6-001C4D269B5F")
+            let uuid:NSUUID = NSUUID(UUIDString: "xxxxxx-02B5-1801-86F6-001C4D269B5F")!
             
             region = CLBeaconRegion(proximityUUID: uuid, identifier: "info.swiftbeginner")
             switch CLLocationManager.authorizationStatus() {
-            case .Authorized, .AuthorizedWhenInUse:
+            case .AuthorizedAlways, .AuthorizedWhenInUse:
                 println("承認済み")
             case .NotDetermined:
                 println("未承認")
@@ -69,7 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             println("未承認")
         case .Restricted, .Denied:
             println("制限中")
-        case .Authorized, .AuthorizedWhenInUse:
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
             println("承認済")
             break
         default:
