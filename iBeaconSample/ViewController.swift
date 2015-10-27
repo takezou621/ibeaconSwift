@@ -26,22 +26,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             region = CLBeaconRegion(proximityUUID: uuid, identifier: "info.swiftbeginner")
             switch CLLocationManager.authorizationStatus() {
             case .AuthorizedAlways, .AuthorizedWhenInUse:
-                println("承認済み")
+                print("承認済み")
             case .NotDetermined:
-                println("未承認")
+                print("未承認")
                 if locationManager.respondsToSelector("requestAlwaysAuthorization") {
                     locationManager.requestAlwaysAuthorization()
                 }
 
             default:
-                println("default")
+                print("default")
             }
             let ver:String = UIDevice.currentDevice().systemVersion
-            let startIndex = advance(ver.startIndex, 0)
-            let endIndex = advance(ver.startIndex, 1)
+            let startIndex = ver.startIndex.advancedBy(0)
+            let endIndex = ver.startIndex.advancedBy(1)
             let majorVer = ver[Range(start: startIndex, end: endIndex)]
-            println(majorVer)
-            if(majorVer.toInt() >= 8){
+            print(majorVer)
+            if(Int(majorVer) >= 8){
                 // Info.plistに"NSLocationAlwaysUsageDescription"が設定していないとダイアログが表示されない
                 locationManager.requestAlwaysAuthorization()
             }else{
@@ -55,25 +55,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // CLLocationManager Delegate
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        println("didUpdateToLocation")
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        print("didUpdateToLocation")
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("didFailWithError \(error)")
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("didFailWithError \(error)")
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         switch status {
         case .NotDetermined:
-            println("未承認")
+            print("未承認")
         case .Restricted, .Denied:
-            println("制限中")
+            print("制限中")
         case .AuthorizedAlways, .AuthorizedWhenInUse:
-            println("承認済")
-            break
-        default:
-            break
+            print("承認済")
         }
     }
 }
